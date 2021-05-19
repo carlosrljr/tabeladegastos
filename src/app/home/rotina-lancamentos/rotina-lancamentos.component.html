@@ -1,0 +1,56 @@
+<po-container>
+
+  <div class="po-row">
+
+    <form #myForm="ngForm" class="po-md-12">
+
+    <po-select
+      name="tipo"
+      p-label="Tipo:"
+      p-required
+      [p-options]="subtipoOpcoes"
+      class="po-md-2"
+      ngModel
+    ></po-select>
+
+    <po-datepicker
+      name="data"
+      p-label="Data:"
+      class="po-md-2"
+      p-required
+      ngModel
+    ></po-datepicker>
+
+    <po-input
+      p-label="Valor:"
+      name="valor"
+      p-required
+      p-clean
+      class="po-md-2"
+      ngModel
+    ></po-input>
+
+    <po-input
+      p-label="Descrição:"
+      name="descricao"
+      p-required
+      p-clean
+      class="po-md-6"
+      ngModel
+    ></po-input>
+
+
+
+  <po-button
+    class="po-md-12"
+    (p-click)="incluir(myForm)"
+    p-label="Incluir"
+  ></po-button>
+
+    </form>
+
+  </div>
+
+
+
+</po-container>
