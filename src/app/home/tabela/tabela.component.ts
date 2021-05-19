@@ -23,9 +23,13 @@ export class TabelaComponent implements OnInit {
     this.tabelaService.buscarLancamento().subscribe(lancamentos=>{
       console.log(lancamentos);
 
+// replicar variaveis (AliAbr, AliMai... TraJan, TraFev, etc)
+
       let AliJan = 0;
       let AliFev = 0;
       let AliMar = 0;
+
+// replicar IF alterando mes, tipo, variavel
 
       for (let i = 0; i < lancamentos.length;i++){
         let mes = lancamentos[i]["data"].split("-")[1];
@@ -46,6 +50,8 @@ export class TabelaComponent implements OnInit {
 
 
       }
+
+// incluir o mês em um objeto para cada tipo
 
     this.items= [
       {Tipo:"Alimentação",Janeiro:AliJan,Fevereiro:AliFev,Março:AliMar},
