@@ -1,1 +1,3 @@
-<p>detalhes works!</p>
+<po-container *ngIf="lancamentos.length>0">
+    <p *ngFor="let lancamento of lancamentos">{{ lancamento.valor }}</p>
+</po-container>

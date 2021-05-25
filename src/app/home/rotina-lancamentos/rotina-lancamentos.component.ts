@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RotinaLancamentosService } from './rotina-lancamentos.service';
 
 @Component({
   selector: 'app-rotina-lancamentos',
@@ -20,15 +21,20 @@ export class RotinaLancamentosComponent implements OnInit {
     {label: "Outros", value: "outros"},
   ];
 
-  constructor() { }
+  constructor(private rotinaService:RotinaLancamentosService) { }
 
   ngOnInit(): void {
   }
 
   incluir(form: any){
-      console.log(form);
-      console.log(form.value.subtipo);
-      console.log(form.value.descricao);
+      const lancamento={
+        "tipo":form.value.tipo,
+        "data":form.value.data,
+        "valor":form.value.valor,
+        "descricao":form.value.descricao
+      };
+      this.rotinaService.salvarLancamento(lancamento);
+
   }
 
 }
