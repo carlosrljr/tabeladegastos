@@ -1,3 +1,15 @@
 <po-container *ngIf="lancamentos.length>0">
-    <p *ngFor="let lancamento of lancamentos">{{ lancamento.valor }}</p>
+  <po-toolbar
+  p-title="Últimos 20 lançamentos:"
+></po-toolbar>
+  <br>
+    <!-- <div *ngFor="let lancamento of lancamentos"> -->
+      <po-grid [p-columns]="colunas" [p-data]="dados"></po-grid>
+    <!-- </div> -->
+    <form #myForm="ngForm">
+      <div class=po-md-12>
+        <po-input name="deletar" p-label="Deletar (número)" class="po-md-1" ngModel> </po-input>
+      </div>
+      <po-button p-label="Deletar" (p-click)="deletarLancamento(myForm)" class="po-md-1"> </po-button>
+    </form>
 </po-container>

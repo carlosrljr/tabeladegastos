@@ -34,6 +34,7 @@ export class RotinaLancamentosComponent implements OnInit {
         "descricao":form.value.descricao
       };
       this.rotinaService.salvarLancamento(lancamento);
+      alert("Lançamento registrado!")
 
   }
 
